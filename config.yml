@@ -1,10 +1,14 @@
 paginate: 5
 theme: PaperMod
+title: CodeMechanics
 
+enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
 
 googleAnalytics: G-LLQ4CTD0CJ
 
@@ -14,6 +18,7 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: CodeMechanics
   description: "Modern technologies inside out, from the perspective of a software engineer."
   keywords: [Blog]
   author: Sargisyan Davit
@@ -36,6 +41,13 @@ params:
   hideSummary: true
   showtoc: false
   tocopen: false
+
+  profileMode:
+    enabled: false # needs to be explicitly set
+
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Modern technologies inside out, from the perspective of a software engineer
 
   assets:
     # disableHLJS: true # to disable highlight.js
@@ -87,8 +99,25 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
-# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
-pygmentsUseClasses: true
+menu:
+  main:
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: davvi
+      name: davvi.io
+      url: https://davvi.io
+      weight: 30
+
+taxonomies:
+  category: categories
+  tag: tags
+
 markup:
   highlight:
     noClasses: false
